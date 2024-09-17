@@ -1,0 +1,10 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "go run main.go"
+  },
+  "dependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  }
+}
