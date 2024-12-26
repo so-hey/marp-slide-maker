@@ -35,7 +35,13 @@ func main() {
 
 	setupApiRoutes(app)
 
-	app.Listen(":3000")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	app.Listen(":" + port)
+
 }
 
 func setupApiRoutes(app *fiber.App) {
@@ -92,7 +98,7 @@ func convertPdf(c *fiber.Ctx) error {
 	cmd := exec.Command("npx", "@marp-team/marp-cli", "--theme", themeFilePath, "--html", "--pdf", mdFilePath, "-o", pdfFilePath)
 	err = cmd.Run()
 	if err != nil {
-		return c.Status(500).SendString(fmt.Sprintf("Failed to convert to PDF: %v", err))
+		return c.Status(500).SendString(fmt.Sprintf("Failed to convert to PDF: \n%v", err))
 	}
 
 	c.Set("Content-Type", "application/pdf")
@@ -123,7 +129,7 @@ func convertPptx(c *fiber.Ctx) error {
 	cmd := exec.Command("npx", "@marp-team/marp-cli", "--theme", themeFilePath, "--html", "--pptx", mdFilePath, "-o", pptxFilePath)
 	err = cmd.Run()
 	if err != nil {
-		return c.Status(500).SendString(fmt.Sprintf("Failed to convert to PDF: %v", err))
+		return c.Status(500).SendString(fmt.Sprintf("Failed to convert to PDF: \n%v", err))
 	}
 
 	c.Set("Content-Type", "application/vnd.openxmlformats-officedocument.presentationml.presentation")

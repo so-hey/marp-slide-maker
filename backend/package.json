@@ -5,6 +5,6 @@
     "start": "go run main.go"
   },
   "dependencies": {
-    "@marp-team/marp-cli": "^3.4.0"
+    "@marp-team/marp-cli": "^4.0.3"
   }
 }

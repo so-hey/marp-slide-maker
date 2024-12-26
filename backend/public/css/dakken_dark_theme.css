@@ -46,7 +46,7 @@ h2 {
 }
 
 a {
-  font-size: 120%;
+  font-size: 110%;
   text-decoration: underline;
 }
 a:hover {
@@ -69,27 +69,35 @@ blockquote {
 }
 
 strong {
-  color: #b2dcff;
-  font-size: 120%;
+  color: #c3e2fd;
+  font-size: 110%;
 }
 
 .title {
   font-size: 80px;
   text-align: center;
   font-weight: 600;
-  color: #80c6ff;
+  color: #42aaff;
 }
 
 .subtitle {
   position: absolute;
-  top: 40px;
+  height: 70px;
+  width: 85%;
+  padding: 0 20px;
+  top: 30px;
   font-size: 45px;
   font-weight: 600;
   color: #80c6ff;
+  border-bottom: 2px solid #bbb;
 }
 
 .content {
-  margin: 40px 0 0 20px;
+  margin-top: 100px;
+}
+
+.other ul {
+  list-style: none;
 }
 
 .split,
