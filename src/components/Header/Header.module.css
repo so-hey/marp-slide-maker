@@ -1,0 +1,7 @@
+.headerContainer {
+  box-shadow: 0 0.01rem 0.1rem var(--linecolor);
+}
+
+.headerContent {
+  width: 1280px;
+}

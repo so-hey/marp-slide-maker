@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #eeeeee;
+  --foreground: #222222;
+  --linecolor: #aaaaaa;
+  --errorcolor: #ff2222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #222222;
+    --foreground: #eeeeee;
+    --linecolor: #000000;
+    --errorcolor: #cc0000;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.error {
+  color: var(--errorcolor);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
